@@ -73,16 +73,16 @@ namespace Otopark
             dataGridView1.Columns.Clear();
             baglanti.Open();
             string kayit = "select adSoyad,aracPlaka,aracCinsi,cepTelefonu,girisTarihi from araclar";
-            //musteriler tablosundaki tüm kayıtları çekecek olan sql sorgusu.
+            
             komut = new SqlCommand(kayit, baglanti);
-            //Sorgumuzu ve baglantimizi parametre olarak alan bir SqlCommand nesnesi oluşturuyoruz.
+           
             SqlDataAdapter da = new SqlDataAdapter(komut);
-            //SqlDataAdapter sınıfı verilerin databaseden aktarılması işlemini gerçekleştirir.
+          
             DataTable dt = new DataTable();
             da.Fill(dt);
-            //Bir DataTable oluşturarak DataAdapter ile getirilen verileri tablo içerisine dolduruyoruz.
+            
             dataGridView1.DataSource = dt;
-            //Formumuzdaki DataGridViewin veri kaynağını oluşturduğumuz tablo olarak gösteriyoruz.
+           
             baglanti.Close();
         }
     }
