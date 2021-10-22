@@ -33,7 +33,7 @@ namespace Otopark
             sec.Parameters.AddWithValue("@aracPlaka", plaka);
             SqlDataAdapter da = new SqlDataAdapter(sec);
             SqlDataReader dr = sec.ExecuteReader();
-            if (dr.Read()) //Datareader herhangi bir okuma yapabiliyorsa aşağıdaki kodlar çalışır.
+            if (dr.Read())
             {
                 string girisTarihi = dr["girisTarihi"].ToString();
                 string odenenUcret = dr["odenenUcret"].ToString();
